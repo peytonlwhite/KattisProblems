@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Playground
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // take in two values 
+            // output what quadrant it is in 
+
+            string input;
+            double x;
+            double y;
+            bool isNum;
+
+            Console.WriteLine("this program takes an x value and a y value and tells you which quadrant it is in");
+            Console.WriteLine("The x and y value has to be under 1001 and over a -1001 \n");
+
+           
+            
+
+            do
+            {
+                Console.Write("What is the x value: ");
+                input = Console.ReadLine();
+
+                isNum = double.TryParse(input, out x);
+
+                
+            } while (x > 1000 || x < -1001 || isNum == false);
+
+
+
+            do
+            {
+                Console.Write("What is the y value: ");
+                input = Console.ReadLine();
+
+                isNum = double.TryParse(input, out y);
+                
+
+            } while (y > 1000 || y < -1001 || isNum == false);
+
+
+            if (x > 0 && y > 0)
+            {
+                Console.WriteLine($"the value x:{x} and the value y:{y} are in the 1st quadrant",x,y);
+            }
+            else if (x < 0 && y > 0)
+            {
+                Console.WriteLine($"the value x:{x} and the value y:{y} are in the 2nd quadrant", x, y);
+            }
+            else if(x < 0 && y < 0)
+            {
+                Console.WriteLine($"the value x:{x} and the value y:{y} are in the 3rd quadrant", x, y);
+            }
+            else if(x > 0 && y < 0)
+            {
+                Console.WriteLine($"the value x:{x} and the value y:{y} are in the 4th quadrant", x, y);
+            }
+            else
+            {
+                Console.WriteLine("0 and 0 are in no quadrant");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
